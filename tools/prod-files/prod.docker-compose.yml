@@ -1,0 +1,25 @@
+version: '2'
+services:
+  nginx:
+    image: nginxvhustle
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - vhustle
+    volumes:
+      - /var/log:/var/log
+      - /home/ilyaufo/vhustle/frontend:/etc/nginx/html/
+      - /home/ilyaufo/nginx/html:/etc/nginx/panoland/
+  db:
+    image: postgres:9.5
+    env_file: postgres.env
+#    volumes:
+#      - /var/lib/postgresql/data/pgdata:/var/lib/postgresql/data/pgdata
+  vhustle:
+    image: vhustle
+    env_file: prod.env
+    volumes:
+      - /var/log/vhustle:/var/log/vhustle
+    depends_on:
+      - db

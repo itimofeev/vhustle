@@ -1,0 +1,22 @@
+go-bindata -pkg migrations -o db/migrations/bindata.go db/migrations/
+
+ssh ilyaufo@188.166.26.165
+
+scp -r target/* ilyaufo@188.166.26.165:/home/ilyaufo/vhustle
+
+
+Backup:
+sudo docker exec -t vhustle_db_1 pg_dumpall -c -U postgres > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+
+Run docker locally
+docker-compose -p vhustle -f tools/dev.docker-compose.yml up -d
+docker-compose -p vhustle -f tools/dev.docker-compose.yml stop
+
+
+godep save -v github.com/itimofeev/vhustle/main/vhustle
+
+https://docs.google.com/spreadsheets/d/1JNJoKrHNK43Z_x6QnEP27yQ30QaDDyqBkgHHx2EqPrU/edit#gid=0
+
+# MaterialUI examples
+https://www.casalova.com/my-listings/a5mYirMFqYSaKQ49u
+https://app.itsquiz.com/results
