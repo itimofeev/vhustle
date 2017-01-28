@@ -23,7 +23,7 @@ type DbEnv struct {
 	StrictMode   bool   `envconfig:"VHUSTLE_DB_STRICT_MODE" default:"false"`
 }
 type AppEnv struct {
-	LogDirPath string `envconfig:"VHUSTLEf_APP_LOG_DIR_PATH"`
+	LogDirPath string `envconfig:"VHUSTLE_APP_LOG_DIR_PATH"`
 }
 
 // Db settings

@@ -1,0 +1,7 @@
+2017/01/28 13:08:12 [warn] 1#1: duplicate MIME type "text/html" in /etc/nginx/nginx.conf:32
+2017/01/28 13:08:12 [warn] 1#1: duplicate MIME type "text/html" in /etc/nginx/nginx.conf:98
+2017/01/28 13:08:55 [warn] 1#1: duplicate MIME type "text/html" in /etc/nginx/nginx.conf:32
+2017/01/28 13:08:55 [warn] 1#1: duplicate MIME type "text/html" in /etc/nginx/nginx.conf:98
+2017/01/28 14:06:29 [emerg] 1#1: open() "/etc/nginx/mime.types" failed (2: No such file or directory) in /etc/nginx/nginx.conf:14
+2017/01/28 14:14:44 [warn] 1#1: duplicate MIME type "text/html" in /etc/nginx/nginx.conf:32
+2017/01/28 14:14:44 [warn] 1#1: duplicate MIME type "text/html" in /etc/nginx/nginx.conf:98

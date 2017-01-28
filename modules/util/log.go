@@ -12,7 +12,7 @@ var AnyLog *log.Logger
 var ContestGLog *log.Logger
 
 func InitLogs(c Config) {
-	var logLevel = log.DebugLevel.String()
+	var logLevel = log.DebugLevel
 	logDirPath := c.App().LogDirPath
 	if len(logDirPath) == 0 {
 		var lg = log.New()
@@ -31,7 +31,7 @@ func InitLogs(c Config) {
 	}
 }
 
-func newFileLog(logDir, logLevel, logName string) *log.Logger {
+func newFileLog(logDir string, level log.Level, logName string) *log.Logger {
 	fileLog := &lumberjack.Logger{
 		Filename:   logDir + "/" + logName,
 		MaxSize:    5, // megabytes
@@ -41,10 +41,7 @@ func newFileLog(logDir, logLevel, logName string) *log.Logger {
 
 	var lg = log.New()
 	lg.Out = fileLog
-	level, err := log.ParseLevel(logLevel)
-	if err == nil {
-		lg.Level = level
-	}
+	lg.Level = level
 
 	return lg
 }

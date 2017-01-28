@@ -9,9 +9,6 @@ rm ${PROJECT_PATH}/target/*
 mkdir ${PROJECT_PATH}/target
 
 
-docker build --force-rm=true -t nginxvhustle -f ${PROJECT_PATH}/tools/nginx.Dockerfile .
-docker save -o "$PROJECT_PATH/target/nginxvhustle.img" "nginxvhustle"
-
 export GOOS=linux
 export GOARCH=amd64
 go build -v github.com/itimofeev/vhustle/main/vhustle

@@ -5,8 +5,5 @@ RUN apk add --update ca-certificates # Certificates for SSL
 # Add the binary
 COPY vhustle /bin/vhustle
 
-# Document that the service listens on port 8080.
-EXPOSE 8080
-
 # Run the axxoncloud command by default when the container starts.
 CMD ["/bin/vhustle"]
