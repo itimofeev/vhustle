@@ -11,6 +11,7 @@ import (
 func main() {
 	util.InitPersistence()
 	server.InitCronTasks()
+	util.AnyLog.Debug("Lets start fun with vhustle :)")
 
 	log.Fatal(http.ListenAndServe(":8080", server.InitRouter()))
 }

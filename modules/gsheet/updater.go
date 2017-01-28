@@ -113,7 +113,8 @@ func areContestsEqual(contestG ContestG, contestDb ContestDb) bool {
 		contestDb.PreregLink == converted.PreregLink &&
 		contestDb.ResultsLink == converted.ResultsLink &&
 		contestDb.VideosLink == converted.VideosLink &&
-		contestDb.VkLink == converted.VkLink
+		contestDb.VkLink == converted.VkLink &&
+		contestDb.AvatarFile == converted.AvatarFile
 }
 
 func convertContestToDb(contestG ContestG) ContestDb {
@@ -129,6 +130,7 @@ func convertContestToDb(contestG ContestG) ContestDb {
 		ResultsLink: convertLinksDb(contestG.ResultLink),
 		VideosLink:  convertLinksDb(contestG.VideoLink),
 		PhotosLink:  convertLinksDb(contestG.PhotoLink),
+		AvatarFile:  contestG.AvatarFile,
 	}
 }
 

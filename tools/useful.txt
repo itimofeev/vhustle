@@ -15,8 +15,12 @@ docker-compose -p vhustle -f tools/dev.docker-compose.yml stop
 
 godep save -v github.com/itimofeev/vhustle/main/vhustle
 
-https://docs.google.com/spreadsheets/d/1JNJoKrHNK43Z_x6QnEP27yQ30QaDDyqBkgHHx2EqPrU/edit#gid=0
+https://docs.google.com/spreadsheets/d/13L13i-0VH_8NH508rVJm6ohcChtAb4XuuZz5umkCT2Y/edit#gid=0
 
 # MaterialUI examples
 https://www.casalova.com/my-listings/a5mYirMFqYSaKQ49u
 https://app.itsquiz.com/results
+
+
+Иконки
+http://zavoloklom.github.io/material-design-iconic-font/icons.html

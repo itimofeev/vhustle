@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-const readRange = "Contests!A2:K"
+const readRange = "Contests!A2:L"
 
 const (
 	colTitle = iota
@@ -24,6 +24,7 @@ const (
 	colResultsLink
 	colVideosLink
 	colPhotosLink
+	colAvatarFile
 )
 
 func fetchContests() (c []ContestG, err error) {
@@ -52,6 +53,7 @@ func fetchContests() (c []ContestG, err error) {
 			ResultLink: rowVal(row, colResultsLink),
 			VideoLink:  rowVal(row, colVideosLink),
 			PhotoLink:  rowVal(row, colPhotosLink),
+			AvatarFile: rowVal(row, colAvatarFile),
 		})
 	}
 	util.ContestGLog.WithField("rowsFetched", len(values)).Debug("Finished fetching contests from gsheet")

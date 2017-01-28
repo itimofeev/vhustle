@@ -29,8 +29,6 @@ func InitLogs(c Config) {
 		AnyLog = newFileLog(logDirPath, logLevel, "any.log")
 		ContestGLog = newFileLog(logDirPath, logLevel, "contestG.log")
 	}
-
-	AnyLog.Debug("Lets start fun with vhustle :)")
 }
 
 func newFileLog(logDir, logLevel, logName string) *log.Logger {

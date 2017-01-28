@@ -32,6 +32,7 @@ func convertContestToDto(contestDbs []ContestDb) []ContestDto {
 			ResultsLink:  convertLinksDbToDto(db.ResultsLink),
 			VideosLink:   convertLinksDbToDto(db.VideosLink),
 			PhotosLink:   convertLinksDbToDto(db.PhotosLink),
+			AvatarFile:   db.AvatarFile,
 			UpdateDate:   db.UpdateDate,
 			LastSyncDate: db.LastSyncDate,
 		})

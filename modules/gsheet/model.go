@@ -4,7 +4,7 @@ import (
 	"time"
 )
 
-var contestInsert = []string{"title", "date", "date_str", "city_name", "forum_url", "vk_link", "prereg_link", "common_info", "results_link", "videos_link", "photos_link", "update_date", "last_sync_date"}
+var contestInsert = []string{"title", "date", "date_str", "city_name", "forum_url", "vk_link", "prereg_link", "common_info", "results_link", "videos_link", "photos_link", "update_date", "last_sync_date", "avatar_file"}
 
 type ContestDb struct {
 	ID       int64     `db:"id"`
@@ -22,6 +22,8 @@ type ContestDb struct {
 	ResultsLink string `db:"results_link"`
 	VideosLink  string `db:"videos_link"`
 	PhotosLink  string `db:"photos_link"`
+
+	AvatarFile string `db:"avatar_file"`
 
 	UpdateDate   time.Time `db:"update_date"`
 	LastSyncDate time.Time `db:"last_sync_date"`
@@ -42,6 +44,8 @@ type ContestG struct {
 	ResultLink string
 	VideoLink  string
 	PhotoLink  string
+
+	AvatarFile string
 }
 
 type TextLink struct {
@@ -65,6 +69,8 @@ type ContestDto struct {
 	ResultsLink []TextLink `json:"results_link"`
 	VideosLink  []TextLink `json:"videos_link"`
 	PhotosLink  []TextLink `json:"photos_link"`
+
+	AvatarFile string `json:"avatar_file"`
 
 	UpdateDate   time.Time `json:"update_date"`
 	LastSyncDate time.Time `json:"last_sync_date"`

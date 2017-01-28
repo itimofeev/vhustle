@@ -30,6 +30,8 @@ func InitPersistence() {
 }
 
 func InitDb(config Config) *runner.DB {
+	AnyLog.Debug("Start initializing DB")
+
 	db, err := sql.Open("postgres", config.Db().URL)
 
 	CheckErr(err, "Open db")
@@ -60,6 +62,8 @@ func InitDb(config Config) *runner.DB {
 
 	// Log any query over 10ms as warnings. (optional)
 	runner.LogQueriesThreshold = 10 * time.Millisecond
+
+	AnyLog.Debug("Finished initializing DB")
 
 	return runner.NewDB(db, "postgres")
 }
