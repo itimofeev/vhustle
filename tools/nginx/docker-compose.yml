@@ -11,7 +11,8 @@ services:
       - vhustle
     volumes:
       - /var/log:/var/log
-      - /home/ilyaufo/vhustle/frontend:/etc/nginx/html/
+      - /home/ilyaufo/vhustle/frontend:/etc/nginx/vhustle/html/
+      - /home/ilyaufo/letsrest/frontend:/etc/nginx/letsrest/html/
       - /home/ilyaufo/static/html:/etc/nginx/html/
   vhustle-db:
     image: postgres:9.5
@@ -25,3 +26,9 @@ services:
       - /var/log/vhustle:/var/log/vhustle
     depends_on:
       - vhustle-db
+
+  letsrest:
+    image: letsrest
+    env_file: letsrest.prod.env
+    volumes:
+      - /var/log/letsrest:/var/log/letsrest
