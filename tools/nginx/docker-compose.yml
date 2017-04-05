@@ -1,0 +1,27 @@
+version: '2'
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - vhustle
+    volumes:
+      - /var/log:/var/log
+      - /home/ilyaufo/vhustle/frontend:/etc/nginx/html/
+      - /home/ilyaufo/static/html:/etc/nginx/html/
+  vhustle-db:
+    image: postgres:9.5
+    env_file: vhustle.postgres.env
+    ports:
+      - "5432:5432"
+  vhustle:
+    image: vhustle
+    env_file: vhustle.prod.env
+    volumes:
+      - /var/log/vhustle:/var/log/vhustle
+    depends_on:
+      - vhustle-db
